@@ -11,6 +11,10 @@ module.exports = {
 
   states: [
     {
+      id: 'counts',
+      value: []
+    },
+    {
       id: 'statusMap',
       value: {
         red: '异常',
