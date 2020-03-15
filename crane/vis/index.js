@@ -14,6 +14,14 @@ module.exports = {
     {
       id: 'geojson',
       value: [yangquanGeoJson]
+    },
+    {
+      id: 'statusMap',
+      value: {
+        red: '异常',
+        green: '正常',
+        yellow: '预警'
+      }
     }
   ],
 

@@ -40,7 +40,7 @@ module.exports = {
                 class: 'badge',
                 $class: 'cell'
               },
-              content: '{{cell}}',
+              content: '{{craneStates.statusMap[cell]}}',
               directive: {
                 if: "columnKey === 'status'"
               }
