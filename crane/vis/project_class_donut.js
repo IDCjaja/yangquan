@@ -8,7 +8,7 @@ module.exports = {
     results: 'results',
   },
   props: {
-    $url: "`/v1/components/f3b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
+    $url: "`/v1/components/1314138c-beef-43b1-ae74-989d98c73f5e/data`",
     method: 'get',
     $data: "[{label: '事件来源', amount: 12}]",
     $style: {
@@ -26,7 +26,7 @@ module.exports = {
         labelKey: 'label',
         valueKey: 'amount',
         $percentage: true,
-        $hideLabel: true,
+        // $hideLabel: true,
         $theme: {
           background: 'transparent',
           $colors: "['#1B74EF', '#15C689', '#FFBA08', '#BB4430']",

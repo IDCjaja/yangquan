@@ -1,4 +1,5 @@
 const { yangquanGeoJson }= require('../yangquanGeoJson');
+const  investmentTable = require('./investment_table')
 
 const map = require('./map');
 module.exports = {
@@ -17,6 +18,6 @@ module.exports = {
   ],
 
   components: [
-    map
+    investmentTable
   ],
 };

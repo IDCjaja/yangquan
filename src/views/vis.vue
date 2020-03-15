@@ -1,9 +1,16 @@
 <template>
   <div class="vis">
-    <data-loader v-slot="{ results: results }" :data="[['', 0, [0, 0]]]" url="/v1/components/d160c22f-c088-4173-8a6a-af385d64e09f/data" method="get">
-      <base-map :mapOptions="{center: [113.583285,37.861188], zoom: 15, zooms: [15, 20]}" mapStyle="amap://styles/01cd33f7f858c589201c06481d43ff47" :useMapUi="true" :style="{width: '100%', height: '100%', position: 'absolute', top: '0px', left: '0px'}">
-        <regions @area-clicked="()=>[areaClickFunc]" :areas="craneStates.geojson" :areaStyle="{strokeColor: '#32c5ff', strokeWeight: '2', fillColor: '#ffffff'}" />
-      </base-map>
+    <data-loader ref="investment" v-slot="{ results: results }" url="/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c/data" method="get" :data="[[0]]" :style="{width: '194px', height: '44px', position: 'absolute', top: '121px', left: '63px'}">
+      <vis-table ref="investment-table" v-if="results" stripe="true" :headers="[{key: 'name', title: '项目名称'}, {key: 'finished', title: '已完成投资额'}, {key: 'total', title: '项目总投资'}, {key: 'percetage', title: '已投资比率'}, {key: 'status', title: '预警标识'}]" :data="results.map(item => ({name: item[0], finished: item[1], total: item[2], percetage: item[3], status: item[4]}))">
+        <template v-slot="{ cell: cell, columnKey: columnKey }">
+          <span class="badge" :class="cell" v-if="columnKey=== 'status'">
+            {{cell}}
+          </span>
+          <span v-else>
+            {{cell}}
+          </span>
+        </template>
+      </vis-table>
     </data-loader>
   </div>
 </template>
@@ -12,19 +19,15 @@
 import BuiltInMixin from '../mixins/built_in'
 import {
   DataLoader,
+  VisTable,
 } from '@byzanteam/vis-components'
-import {
-  BaseMap,
-  Regions,
-} from '@byzanteam/map-ui'
 
 export const vis = {
   mixins: [BuiltInMixin],
 
   components: {
     DataLoader,
-    BaseMap,
-    Regions,
+    VisTable,
   },
 
   data () {

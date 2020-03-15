@@ -2,7 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-axios.defaults['baseURL'] = 'http://yqfw.cdyoue.com'
+axios.defaults['baseURL'] = 'https://yqfw.cdyoue.com/'
 
 export default {
   install () {

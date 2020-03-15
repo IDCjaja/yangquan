@@ -23,9 +23,39 @@ module.exports = {
       component: '@byzanteam/vis-components/vis-table',
       props: {
         'v-if': 'results',
-        $stripe: true,
-        $data:''
-      }
+        stripe: 'true',
+        $headers: "[{key: 'name', title: '项目名称'}, {key: 'finished', title: '已完成投资额'}, {key: 'total', title: '项目总投资'}, {key: 'percetage', title: '已投资比率'}, {key: 'status', title: '预警标识'}]",
+        $data: 'results.map(item => ({name: item[0], finished: item[1], total: item[2], percetage: item[3], status: item[4]}))'
+      },
+      children: [
+        {
+          component: 'template',
+          exports: {
+            cell: 'cell',
+            columnKey: 'columnKey'
+          },
+          children: [
+            {
+              component: 'span',
+              props: {
+                class: 'badge',
+                $class: 'cell'
+              },
+              content: '{{cell}}',
+              directive: {
+                if: "columnKey === 'status'"
+              }
+            },
+            {
+              component: 'span',
+              directive: {
+                else: true,
+              },
+              content: '{{cell}}',
+            }
+          ]
+        },
+      ]
     },
   ]
 };

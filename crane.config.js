@@ -7,7 +7,7 @@ module.exports = {
   // 屏幕默认尺寸, 所有页面都继承该值，页面可单独设置
   size: [1920, 1080],
   requestSettings: {
-    baseURL: 'http://yqfw.cdyoue.com',
+    baseURL: 'https://yqfw.cdyoue.com/',
   },
   modules: {
     '@byzanteam/vis-components': {
