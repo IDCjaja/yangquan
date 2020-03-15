@@ -17,6 +17,9 @@ module.exports = {
         path: 'dist/index.css',
       },
     },
+    '@byzanteam/map-ui': {
+      version: 'latest',
+    },
     '@byzanteam/graphite': {
       version: 'latest',
     },

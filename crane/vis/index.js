@@ -1,5 +1,5 @@
 const investmentTable = require('./investment_table')
-const map = require('./map')
+const map = require('./base_map')
 
 module.exports = {
   route: {
