@@ -22,20 +22,21 @@ module.exports = {
       component: '@byzanteam/graphite/donut',
       props: {
         'v-if': 'results',
-        $data: "results.map(item => { return {label: item[1], amount: item[0] } } )",
+        $data: "results.map(item => { return {label: item[0], amount: item[1] } } )",
         labelKey: 'label',
         valueKey: 'amount',
         $percentage: true,
+        $innerRadius: 0.68,
         // $hideLabel: true,
         $theme: {
           background: 'transparent',
-          $colors: "['#1B74EF', '#15C689', '#FFBA08', '#BB4430']",
+          $colors: "['#EFC11E', '#0158FF']",
           whitespace: 'nowrap'
         },
         $legendOptions: {
           size: '70px',
-          $align: "['start', 'center']",
-          layout: 'vertical',
+          $align: "['center', 'start']",
+          layout: 'horizontal',
           $label: {
             fill: '#2E2E2E',
             $size: 14,
