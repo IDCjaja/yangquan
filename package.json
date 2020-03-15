@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@byzanteam/vis-components": "../vis-components",
+    "@byzanteam/map-ui": "latest",
     "axios": "^0.19.0",
     "lodash": "^4.17.15",
     "vue": "^2.6.10",

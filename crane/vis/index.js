@@ -1,6 +1,6 @@
-const  investmentTable = require('./investment_table')
+const investmentTable = require('./investment_table')
+const map = require('./map')
 
-const map = require('./map');
 module.exports = {
   route: {
     name: 'vis',
@@ -21,6 +21,7 @@ module.exports = {
   ],
 
   components: [
+    map,
     investmentTable
   ],
 };
