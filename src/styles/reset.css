@@ -18,3 +18,25 @@
   background-color: rgba(239, 193, 30, .1);
   color: rgb(239, 193, 30);
 }
+
+.table .table__head thead {
+  background: #f4f4f8 !important;
+}
+
+.table td, .table th {
+  padding: .8rem .4rem !important;
+  line-height: 1.5 !important;
+}
+
+.table.table--stripe .table__body tr:nth-child(odd) {
+  background-color: #ffffff !important;
+}
+
+.table.table--stripe .table__body tr:nth-child(even) {
+  background-color: rgba(244, 244, 248, .5) !important;
+}
+
+.table tr {
+  border-bottom-color: transparent !important;
+  color: #313c56 !important;
+}

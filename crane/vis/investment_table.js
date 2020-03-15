@@ -22,9 +22,9 @@ module.exports = {
       component: '@byzanteam/vis-components/vis-table',
       props: {
         'v-if': 'results',
-        stripe: 'true',
+        stripe: 'row',
         $headers: "[{key: 'name', title: '项目名称'}, {key: 'finished', title: '已完成投资额'}, {key: 'total', title: '项目总投资'}, {key: 'percetage', title: '已投资比率'}, {key: 'status', title: '预警标识'}]",
-        $data: 'results.map(item => ({name: item[0], finished: item[1], total: item[2], percetage: item[3], status: item[4]}))'
+        $data: "results.map(item => ({name: item[0], finished: `${item[1]} 亿元`, total: `${item[2]} 亿元`, percetage: `${item[3]}%`, status: item[4]}))"
       },
       children: [
         {
