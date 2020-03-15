@@ -24,12 +24,6 @@
 import _  from 'lodash'
 import axios from 'axios'
 import BuiltInMixin from '../mixins/built_in'
-import Echarts from 'vue-echarts'
-import 'echarts/lib/chart/scatter'
-import 'echarts/lib/chart/effectScatter'
-import 'echarts/lib/component/geo'
-import 'echarts/lib/chart/map'
-import 'echarts/lib/component/tooltip'
 import { yangquanGeoJson } from '../../crane/yangquanGeoJson';
 
 import {
@@ -66,30 +60,6 @@ export const vis = {
     axios.get('/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data').then(({data: {data, schema}}) => {
       this.counts = data
     })
-  },
-
-  watch: {
-    counts (value) {
-      if(!_.isEmpty(value)) {
-        this.$refs.chartRef.chart.setOption(this.options)
-      }
-    }
-  },
-
-  methods: {
-    geoLabelHoverFormatter (param) {
-      var counts = this.counts.find(item => {
-        return param.name === item[0]
-      }) || [0, 0, 0, 0, 0]
-      return `
-      \{b|固定资产投资\}\n\{a|当年累计投资额：${counts[1]}\n同比增速：${counts[2] || 0}\}
-      \{b|省市重点工程\}\n\{a|当年累计投资额：${counts[3] || 0}\n完成率：${counts[4] || 0}\}
-      \{b|全年项目库投资\}\n\{a|开工率：${counts[5] || 0}\}
-      \{b|新建项目开工\}\n\{a|开工率：${counts[6] || 0}\}
-      \{b|国省资金争取\}\n\{a|争取资金额：${counts[7] || 0}\}
-      \{b|标准厂房建设\}\n\{a|累计建设面积：${counts[8] || 0}\n完成率：${counts[9] || 0}\}
-      `
-    },
   },
 }
 export default vis
