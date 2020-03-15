@@ -3,7 +3,7 @@ const {normal_digital_style} = require('../share');
 module.exports = {
   id: 'investment',
   component: '@byzanteam/vis-components/data-loader',
-  position: [510, 676],
+  position: [530, 760],
   exports: {
     results: 'results',
   },
@@ -12,8 +12,8 @@ module.exports = {
     method: 'get',
     $data: "[[0]]",
     $style: {
-      width: '900px',
-      height: '384px'
+      width: '860px',
+      height: '280px'
     },
   },
   children: [

@@ -1,6 +1,5 @@
 const investmentTable = require('./investment_table')
 const map = require('./base_map')
-
 const allYear = require('./kpi_all_year_investment_digital');
 const fixedInvestment = require('./kpi_fixed_investment_digital');
 const fixedSpeed = require('./kpi_fixed_speed');
@@ -39,8 +38,6 @@ module.exports = {
   ],
 
   components: [
-    map,
-    investmentTable,
     // 各个区域标题及外层border盒子
     {
       id: 'six-title-icon',
@@ -253,6 +250,60 @@ module.exports = {
         }
       }
     },
+
+    {
+      id: 'new-title-icon',
+      component: 'div',
+      position: [530, 697],
+      props: {
+        $style: {
+          height: '20px',
+          width: '4px',
+          borderRadius: '2px',
+          backgroundColor: '#0158ff',
+        }
+      }
+    },
+    {
+      id: 'new-title-text',
+      component: 'div',
+      content: '投资预计分析',
+      position: [546, 698],
+      props: {
+        $style: {
+          fontsize: '20px',
+          color: '#6b7885',
+          lineHeight: 1,
+          fontWeight: 500
+        }
+      }
+    },
+    {
+      id: 'new-title-line',
+      component: 'div',
+      position: [510, 740],
+      props: {
+        $style: {
+          width: '960px',
+          height: '1px',
+          backgroundColor: '#ECF1F3'
+        }
+      }
+    },
+    {
+      id: 'new-border-box',
+      component: 'div',
+      position: [510, 676],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '900px',
+          height: '384px'
+        }
+      }
+    },
+
     {
       id: 'city-content',
       component: 'div',
@@ -548,7 +599,6 @@ module.exports = {
         }
       }
     },
-
     allYear,
     fixedInvestment,
     fixedSpeed,
@@ -559,5 +609,7 @@ module.exports = {
     workShop,
     workShopSpeed,
     donut,
+    map,
+    investmentTable,
   ],
 };

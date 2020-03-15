@@ -5,6 +5,7 @@ import i18n from './locale/i18n'
 import plugins from './plugins/index'
 
 import '@byzanteam/vis-components/dist/index.css'
+import '@byzanteam/carbonium/dist/carbonium.css'
 import './styles/reset.css'
 
 plugins.install()

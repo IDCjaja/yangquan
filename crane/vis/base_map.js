@@ -1,16 +1,13 @@
 module.exports = {
   component: '@byzanteam/vis-components/data-loader',
-  position: [690, 272],
-  exports: {
-    results: 'results',
-  },
+  position: [540, 292],
   props: {
     $data: "[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]",
     url: '/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data',
     method: 'get',
     $style: {
-      width: '387px',
-      height: '284px',
+      width: '457px',
+      height: '344px',
     }
   },
   children: [
