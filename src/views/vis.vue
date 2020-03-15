@@ -128,20 +128,20 @@ export const vis = {
     _creatInfoWindow (json) {
       const content = `<div class='personal-info-container'>
           <div class="info-name">固定资产投资</div>
-          <div class="info-title">当年累计投资额: ${json.properties.first}</div>
-          <div class="info-title">同比增速: ${json.properties.second}</div>
+          <div class="info-title">当年累计投资额: ${json.properties.first} 亿元</div>
+          <div class="info-title">同比增速: ${json.properties.second}%</div>
           <div class="info-name">省市重点工程</div>
-          <div class="info-title">当年累计投资额: ${json.properties.third}</div>
-          <div class="info-title">完成率: ${json.properties.fourth}</div>
+          <div class="info-title">当年累计投资额: ${json.properties.third} 亿元</div>
+          <div class="info-title">完成率: ${json.properties.fourth}%</div>
           <div class="info-name">全年项目库投资</div>
-          <div class="info-title">开工率: ${json.properties.fifth}</div>
+          <div class="info-title">开工率: ${json.properties.fifth}%</div>
           <div class="info-name">新建项目开工</div>
-          <div class="info-title">开工率: ${json.properties.sixth}</div>
+          <div class="info-title">开工率: ${json.properties.sixth}%</div>
           <div class="info-name">国省资金争取</div>
-          <div class="info-title">争取资金额: ${json.properties.seventh}</div>
+          <div class="info-title">争取资金额: ${json.properties.seventh} 亿元</div>
           <div class="info-name">标准厂房建设</div>
-          <div class="info-title">累计建设面积: ${json.properties.eighth}</div>
-          <div class="info-title">完成率: ${json.properties.nineth}</div>
+          <div class="info-title">累计建设面积: ${json.properties.eighth} 万平方米</div>
+          <div class="info-title">完成率: ${json.properties.nineth}%</div>
         </div>`
       this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.center})
     },
