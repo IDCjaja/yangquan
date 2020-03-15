@@ -1,9 +1,9 @@
-const {normal_digital_style} = require('../share');
+const {kpi_digital_style} = require('../share');
 
 module.exports = {
   id: 'funds',
   component: '@byzanteam/vis-components/data-loader',
-  position: [63, 121],
+  position: [1538, 530],
   exports: {
     results: 'results',
   },
@@ -22,7 +22,7 @@ module.exports = {
       id: 'funds-digital',
       component: '@byzanteam/vis-components/digital-roll',
       props: {
-        'v-if': 'results',
+        // 'v-if': 'results',
         titlePosition: 'left',
         $content: {
           title: '争取资金额',
@@ -32,7 +32,7 @@ module.exports = {
         $options: {
           separator: '',
         },
-        ...normal_digital_style,
+        ...kpi_digital_style,
       }
     },
   ]

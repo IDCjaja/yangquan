@@ -1,9 +1,9 @@
-const {normal_digital_style} = require('../share');
+const {kpi_digital_style} = require('../share');
 
 module.exports = {
   id: 'workshop',
   component: '@byzanteam/vis-components/data-loader',
-  position: [63, 121],
+  position: [1538, 623],
   exports: {
     results: 'results',
   },
@@ -22,7 +22,7 @@ module.exports = {
       id: 'workshop-digital',
       component: '@byzanteam/vis-components/digital-roll',
       props: {
-        'v-if': 'results',
+        // 'v-if': 'results',
         titlePosition: 'left',
         $content: {
           title: '累计建设面积',
@@ -32,7 +32,7 @@ module.exports = {
         $options: {
           separator: '',
         },
-        ...normal_digital_style,
+        ...kpi_digital_style,
       }
     },
   ]
