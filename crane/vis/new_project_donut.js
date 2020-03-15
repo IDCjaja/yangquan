@@ -8,7 +8,7 @@ module.exports = {
     results: 'results',
   },
   props: {
-    $url: "/v1/components/1accfeec-bb91-41ca-9f4c-d53662aea01e/data",
+    $url: "`/v1/components/1accfeec-bb91-41ca-9f4c-d53662aea01e/data`",
     method: 'get',
     $data: "[{label: '新建项目进度', amount: 12}]",
     $style: {

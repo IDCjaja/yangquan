@@ -5,7 +5,7 @@ module.exports = {
   },
   props: {
     $data: "[['', 0, [0, 0]]]",
-    url: '/v1/components/d160c22f-c088-4173-8a6a-af385d64e09f/data',
+    url: '`/v1/components/d160c22f-c088-4173-8a6a-af385d64e09f/data`',
     method: 'get',
   },
   children: [
