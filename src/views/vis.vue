@@ -1,7 +1,7 @@
 <template>
   <div class="vis">
     <data-loader ref="chartDataRef" :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" method="get" :style="{width: '587px', height: '384px', position: 'absolute', top: '272px', left: '510px'}">
-      <v-chart ref="chartRef" :options="{backgroundColor: 'transparent', geo: {map: 'yangquan', label: {normal: {show: false, color: '#fff', borderRadius: 4, padding: [8, 8], backgroundColor: 'rgba(50, 50, 50, 0.6)', align: 'left', rich: {a: {width: 120, align: 'left', lineHeight: 18, fontFamily: 'Oswald-Regular'}}, formatter: geoLabelHoverFormatter}, emphasis: {color: '#fff'}}, itemStyle: {normal: {areaColor: 'rgba(35, 173, 120, .1)', borderColor: 'rgba(35, 173, 120, .4)', borderWidth: 1, borderType: 'dash'}, emphasis: {areaColor: 'rgba(35, 173, 120, .9)'}}, z: 1}, series: [{type: 'scatter', coordinateSystem: 'geo', data: [], symbolSize: 3, itemStyle: {normal: {color: '#c05746'}}}, {type: 'scatter', coordinateSystem: 'geo', data: yangquanGeoJson.features.map(feature => ({name: feature.properties.name, value: feature.properties.center})), itemStyle: {normal: {color: 'transparent'}}, label: {show: true, color: '#333333', fontSize: 10}}]}" :style="{width: '100%', height: '100%', position: 'absolute', top: '0px', left: '0px'}" />
+      <v-chart ref="chartRef" :options="options" :style="{width: '100%', height: '100%', position: 'absolute', top: '0px', left: '0px'}" />
     </data-loader>
     <data-loader ref="investment" v-slot="{ results: results }" url="/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c/data" method="get" :data="[[0]]" :style="{width: '900px', height: '384px', position: 'absolute', top: '676px', left: '510px'}">
       <vis-table ref="investment-table" v-if="results" stripe="row" :headers="[{key: 'name', title: '项目名称'}, {key: 'finished', title: '已完成投资额'}, {key: 'total', title: '项目总投资'}, {key: 'percetage', title: '已投资比率'}, {key: 'status', title: '预警标识'}]" :data="results.map(item => ({name: item[0], finished: `${item[1]} 亿元`, total: `${item[2]} 亿元`, percetage: `${item[3]}%`, status: item[4]}))">
@@ -48,8 +48,8 @@ export const vis = {
 
   data () {
     return {
-      yangquanGeoJson: yangquanGeoJson,
       counts: [[]],
+      options: {backgroundColor: 'transparent', geo: {map: 'yangquan', label: {normal: {show: false, color: '#fff', align: 'left', borderRadius: 4, padding: [0, 8], backgroundColor: '#313c56', align: 'left', rich: {a: {width: 160, padding: [0, 0], align: 'left', lineHeight: 14, fontSize: 14, color: 'rgba(255, 255, 255)', fontFamily: 'Oswald-Regular'}, b:{width: 20, align: 'left', padding: [0, 0], lineHeight: 14, fontSize: 14, color: 'rgba(255, 255, 255, .4)'}}, formatter: this.geoLabelHoverFormatter}, emphasis: {color: '#fff'}}, itemStyle: {normal: {areaColor: 'rgba(35, 173, 120, .1)', borderColor: 'rgba(35, 173, 120, .4)', borderWidth: 1, borderType: 'dash'}, emphasis: {areaColor: 'rgba(35, 173, 120, .9)'}}, z: '1'}, series: [{type: 'scatter', coordinateSystem: 'geo', data: [], symbolSize: 3, itemStyle: {normal: {color: '#c05746'}}}, {type: 'scatter', coordinateSystem: 'geo', data: yangquanGeoJson.features.map(feature => ({name: feature.properties.name, value: feature.properties.center})), itemStyle: {normal: {color: 'transparent'}}, label: {formatter: '{b}', show: true, color: '#333333', fontSize: 10}}]},
       craneStates: {
         statusMap: {red: '异常', green: '正常', yellow: '预警'},
       },
@@ -75,7 +75,14 @@ export const vis = {
       var counts = this.counts.find(item => {
         return param.name === item[0]
       }) || [0, 0, 0, 0, 0]
-      return `\{a|${param.name}\n填报人数（人）：${counts[1]} \n有咳嗽症状（人）：${counts[2]} \n有胸闷症状（人）：${counts[3]} \n有发烧症状（人）：${counts[4]}\}`
+      return `
+      \{b|固定资产投资\}\n\{a|当年累计投资额：${counts[1]}\n同比增速：${counts[2] || 0}\}
+      \{b|省市重点工程\}\n\{a|当年累计投资额：${counts[3] || 0}\n完成率：${counts[4] || 0}\}
+      \{b|全年项目库投资\}\n\{a|开工率：${counts[5] || 0}\}
+      \{b|新建项目开工\}\n\{a|开工率：${counts[6] || 0}\}
+      \{b|国省资金争取\}\n\{a|争取资金额：${counts[7] || 0}\}
+      \{b|标准厂房建设\}\n\{a|累计建设面积：${counts[8] || 0}\n完成率：${counts[9] || 0}\}
+      `
     },
   },
 }
