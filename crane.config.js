@@ -20,20 +20,6 @@ module.exports = {
     '@byzanteam/graphite': {
       version: 'latest',
     },
-    '@byzanteam/carbonium': {
-      version: 'latest',
-      style: {
-        type: 'normal',
-        path: 'dist/carbonium.css',
-      },
-    },
-    'element-ui': {
-      version: 'latest',
-      style: {
-        type: 'normal',
-        path: 'lib/theme-chalk/index.css',
-      }
-    },
     '@byzanteam/brick': {
       version: 'latest',
       style: {
