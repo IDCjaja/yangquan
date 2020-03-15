@@ -73,8 +73,9 @@ module.exports = {
             },
             $innerLabelStyle: {
               color: '#6b7885',
-              fontSize: 14,
+              fontSize: 10,
               $padding: "[2, 4]",
+              $offset: "[6, -7]"
             }
           }
         },
