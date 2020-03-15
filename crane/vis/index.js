@@ -52,7 +52,7 @@ module.exports = {
       id: 'six-title-text',
       component: 'div',
       content: '六大指标',
-      position: [1466, 62],
+      position: [1466, 64],
       props: {
         $style: {
           fontsize: '20px',
@@ -105,7 +105,7 @@ module.exports = {
       id: 'project-title-text',
       component: 'div',
       content: '项目分布情况',
-      position: [76, 294],
+      position: [76, 296],
       props: {
         $style: {
           fontsize: '20px',
@@ -158,7 +158,7 @@ module.exports = {
       id: 'new-title-text',
       component: 'div',
       content: '新建项目进度分布',
-      position: [76, 698],
+      position: [76, 700],
       props: {
         $style: {
           fontsize: '20px',
@@ -211,7 +211,7 @@ module.exports = {
       id: 'city-title-text',
       component: 'div',
       content: '市级项目概括',
-      position: [1466, 715],
+      position: [1466, 717],
       props: {
         $style: {
           fontsize: '20px',
