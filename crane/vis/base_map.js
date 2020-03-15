@@ -32,9 +32,9 @@ module.exports = {
         {
           component: '@byzanteam/map-ui/regions',
           props: {
-            $areas: 'yangquanGeoJson.features',
+            $areas: 'areas',
             $areaStyle: {
-              strokeColor: '#32c5ff',
+              strokeColor: '#0158ff',
               strokeWeight: 1,
               fillColor: 'rgba(1, 88, 255, .1)',
             },
@@ -46,7 +46,16 @@ module.exports = {
           },
           events: {
             'area-clicked': {
-              actions: ["areaClickFunc"],
+              params: ['json', 'area', 'vm'],
+              actions: ["areaClickedFunc(json, area, vm)"],
+            },
+            'area-mouseover': {
+              params: ['json', 'area', 'vm'],
+              actions: ["areaMouseoverFunc(json, area, vm)"],
+            },
+            'area-mouseout': {
+              params: ['json', 'area', 'vm'],
+              actions: ["areaMouseoutFunc(json, area, vm)"],
             },
           },
         },
@@ -59,8 +68,24 @@ module.exports = {
             $marker: 'item',
             $markerStyle: {
               color: '#fff',
-              strokeColor: '#32c5ff',
+              $size: 8,
+              strokeColor: '#0158ff',
               $strokeWidth: 2
+            },
+            $innerLabelStyle: {
+              color: '#6b7885',
+              fontSize: 14,
+              $padding: "[2, 4]",
+            }
+          }
+        },
+        {
+          id: 'infowindowRef',
+          component: '@byzanteam/map-ui/info-window',
+          props: {
+            $options: {
+              $closeWhenClickMap: true,
+              $isCustom: true
             }
           }
         }

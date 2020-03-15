@@ -40,3 +40,27 @@
   border-bottom-color: transparent !important;
   color: #313c56 !important;
 }
+
+.personal-info-container {
+  background-color: #313c56;
+  padding: .3rem .4rem;
+  color: #ffffff;
+  font-size: .7rem;
+  border-radius: .2rem;
+  position: relative;
+}
+
+.personal-info-container::after {
+  content: "";
+  position: absolute;
+  border: .4rem solid transparent;
+  border-top-color: transparent;
+  bottom: -1.2rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info-name {
+  color: rgba(255, 255, 255, .4);
+  font-size: .7rem;
+}
