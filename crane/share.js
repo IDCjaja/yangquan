@@ -34,7 +34,7 @@ const chartTooltipOptions = {
 exports.chartTooltipOptions = chartTooltipOptions;
 exports.normal_digital_style = {
   $titleStyle: {
-    color: 'rgba(255, 255, 255)',
+    color: 'rgba(0, 0, 0)',
     fontSize: '14px',
     fontWeight: 500,
   },
@@ -44,7 +44,7 @@ exports.normal_digital_style = {
   },
   $digitalStyle: {
     fontSize: '36px',
-    color: '#FFFFFF',
+    color: '#000000',
     fontWeight: 400,
     fontFamily: 'Oswald',
   },

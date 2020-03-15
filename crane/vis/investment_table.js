@@ -9,7 +9,7 @@ module.exports = {
   },
 
   props: {
-    $url: "`/v1/components/89b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
+    $url: "`/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c`",
     method: 'get',
     $data: "[[0]]",
     $style: {
