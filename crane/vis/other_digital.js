@@ -3,7 +3,7 @@ const {normal_digital_style} = require('../share');
 module.exports = {
   id: 'other',
   component: '@byzanteam/vis-components/data-loader',
-  position: [63, 191],
+  position: [1245, 566],
   exports: {
     results: 'results',
   },
@@ -23,10 +23,10 @@ module.exports = {
       component: '@byzanteam/vis-components/digital-roll',
       props: {
         'v-if': 'results',
-        titlePosition: 'left',
+        titlePosition: 'bottom',
         $content: {
           title: '其他',
-          $digital: 'results[2][2]',
+          $digital: 'results[2][1]',
         },
         $options: {
           separator: '',

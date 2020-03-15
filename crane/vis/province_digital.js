@@ -3,7 +3,7 @@ const {normal_digital_style} = require('../share');
 module.exports = {
   id: 'province',
   component: '@byzanteam/vis-components/data-loader',
-  position: [63, 161],
+  position: [1245, 297],
   exports: {
     results: 'results',
   },
@@ -23,10 +23,10 @@ module.exports = {
       component: '@byzanteam/vis-components/digital-roll',
       props: {
         'v-if': 'results',
-        titlePosition: 'left',
+        titlePosition: 'bottom',
         $content: {
           title: '省级重点项目',
-          $digital: 'results[1][2]',
+          $digital: 'results[1][1]',
         },
         $options: {
           separator: '',

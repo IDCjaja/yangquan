@@ -10,6 +10,10 @@ const newProject = require('./kpi_new_project_digital');
 const workShop = require('./kpi_workshop_digital');
 const workShopSpeed = require('./kpi_workshop_speed');
 const donut = require('./project_class_donut');
+const cityDigital = require('./city_digital');
+const provinceDigital = require('./province_digital');
+const otherDigital = require('./other_digital');
+
 module.exports = {
   route: {
     name: 'vis',
@@ -552,5 +556,8 @@ module.exports = {
     workShop,
     workShopSpeed,
     donut,
+    cityDigital,
+    provinceDigital,
+    otherDigital
   ],
 };
