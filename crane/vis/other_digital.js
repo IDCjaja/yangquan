@@ -11,7 +11,7 @@ module.exports = {
   props: {
     $url: "`/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data`",
     method: 'get',
-    $data: "[[0]]",
+    $data: "[['', 0]]",
     $style: {
       width: '194px',
       height: '44px',
@@ -26,7 +26,7 @@ module.exports = {
         titlePosition: 'left',
         $content: {
           title: '其他',
-          $digital: 'results[0][2][2]',
+          $digital: 'results[2][2]',
         },
         $options: {
           separator: '',

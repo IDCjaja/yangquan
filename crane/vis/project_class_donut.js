@@ -3,17 +3,18 @@ const { chartTooltipOptions } = require('../share');
 module.exports = {
   id: 'project-class',
   component: '@byzanteam/vis-components/data-loader',
-  position: [1565, 690],
+  position: [40, 336],
   exports: {
     results: 'results',
+    response: 'response',
   },
   props: {
-    $url: "`/v1/components/1314138c-beef-43b1-ae74-989d98c73f5e/data`",
+    $url: "`/v1/components/1accfeec-bb91-41ca-9f4c-d53662aea01e/data`",
     method: 'get',
-    $data: "[{label: '事件来源', amount: 12}]",
+    $data: "[[0]]",
     $style: {
-      width: '300px',
-      height: '310px',
+      width: '450px',
+      height: '324px',
     },
   },
   children: [
@@ -22,20 +23,21 @@ module.exports = {
       component: '@byzanteam/graphite/donut',
       props: {
         'v-if': 'results',
-        $data: "results.map(item => { return {label: item[1], amount: item[0] } } )",
+        $data: "results.map(item => { return {label: item[0], amount: item[1] } } )",
         labelKey: 'label',
         valueKey: 'amount',
         $percentage: true,
+        $innerRadius: 0.48,
         // $hideLabel: true,
         $theme: {
           background: 'transparent',
-          $colors: "['#1B74EF', '#15C689', '#FFBA08', '#BB4430']",
+          $colors: "['#EFC11E', '#0158FF']",
           whitespace: 'nowrap'
         },
         $legendOptions: {
           size: '70px',
-          $align: "['start', 'center']",
-          layout: 'vertical',
+          $align: "['center', 'Fd5080', 'start']",
+          layout: 'horizontal',
           $label: {
             fill: '#2E2E2E',
             $size: 14,

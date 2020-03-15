@@ -1,17 +1,17 @@
-const {normal_digital_style} = require('../share');
+const {kpi_digital_style} = require('../share');
 
 module.exports = {
-  id: 'province',
+  id: 'workshop-speed',
   component: '@byzanteam/vis-components/data-loader',
-  position: [63, 161],
+  position: [1746, 623],
   exports: {
     results: 'results',
   },
 
   props: {
-    $url: "`/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data`",
+    $url: "`/v1/components/bb755175-12b0-4868-bf65-bef814543ebb/data`",
     method: 'get',
-    $data: "[['', 0]]",
+    $data: "[[0,0,0,0,0,0,0,0,0]]",
     $style: {
       width: '194px',
       height: '44px',
@@ -19,19 +19,20 @@ module.exports = {
   },
   children: [
     {
-      id: 'province-digital',
+      id: 'workshop-speed-digital',
       component: '@byzanteam/vis-components/digital-roll',
       props: {
-        'v-if': 'results',
+        // 'v-if': 'results',
         titlePosition: 'left',
         $content: {
-          title: '省级重点项目',
-          $digital: 'results[1][2]',
+          title: '完成率',
+          $digital: 'Number(results[0][8])',
+          suffix: '%',
         },
         $options: {
           separator: '',
         },
-        ...normal_digital_style,
+        ...kpi_digital_style,
       }
     },
   ]

@@ -49,3 +49,22 @@ exports.normal_digital_style = {
     fontFamily: 'Oswald',
   },
 };
+exports.kpi_digital_style = {
+  $titleStyle: {
+    color: '#313c56',
+    fontSize: '14px',
+    lineHeight: 1.5
+  },
+  $suffixStyle: {
+    color: '#313c56',
+    fontSize: '14px',
+    lineHeight: 1.5
+  },
+  $digitalStyle: {
+    fontSize: '24px',
+    color: '#313c56',
+    fontWeight: 500,
+    fontFamily: 'Oswald',
+    lineHeight: 1
+  },
+};

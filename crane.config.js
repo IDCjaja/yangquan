@@ -23,6 +23,13 @@ module.exports = {
     '@byzanteam/graphite': {
       version: 'latest',
     },
+    '@byzanteam/carbonium': {
+      version: 'latest',
+      style: {
+        type: 'normal',
+        path: 'dist/carbonium.css',
+      },
+    },
     '@byzanteam/brick': {
       version: 'latest',
       style: {
