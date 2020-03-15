@@ -11,7 +11,7 @@ module.exports = {
   props: {
     $url: "`/v1/components/bb755175-12b0-4868-bf65-bef814543ebb/data`",
     method: 'get',
-    $data: "[[0]]",
+    $data: "[[0,0,0,0,0,0,0,0,0]]",
     $style: {
       width: '194px',
       height: '44px',
@@ -26,7 +26,7 @@ module.exports = {
         titlePosition: 'left',
         $content: {
           title: '争取资金额',
-          $digital: 'results[0][6]',
+          $digital: 'Number(results[0][6])',
           suffix: '亿元',
         },
         $options: {
