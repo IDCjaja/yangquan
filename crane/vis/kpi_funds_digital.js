@@ -9,7 +9,7 @@ module.exports = {
   },
 
   props: {
-    $url: "`/v1/components/89b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
+    $url: "/v1/components/bb755175-12b0-4868-bf65-bef814543ebb/data",
     method: 'get',
     $data: "[[0]]",
     $style: {
@@ -25,9 +25,9 @@ module.exports = {
         'v-if': 'results',
         titlePosition: 'left',
         $content: {
-          title: '当月办件数量',
-          $digital: 'results[0][0]',
-          suffix: '件',
+          title: '争取资金额',
+          $digital: 'results[0][6]',
+          suffix: '亿元',
         },
         $options: {
           separator: '',
