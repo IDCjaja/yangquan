@@ -9,7 +9,7 @@ module.exports = {
   },
 
   props: {
-    $url: "`/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c`",
+    $url: "`/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c/data`",
     method: 'get',
     $data: "[[0]]",
     $style: {
