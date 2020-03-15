@@ -9,7 +9,7 @@ module.exports = {
   },
 
   props: {
-    $url: "`/v1/components/89b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
+    $url: "/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data",
     method: 'get',
     $data: "[[0]]",
     $style: {
@@ -25,9 +25,8 @@ module.exports = {
         'v-if': 'results',
         titlePosition: 'left',
         $content: {
-          title: '当月办件数量',
-          $digital: 'results[0][0]',
-          suffix: '件',
+          title: '市级重点项目',
+          $digital: 'results[0][0][2]',
         },
         $options: {
           separator: '',

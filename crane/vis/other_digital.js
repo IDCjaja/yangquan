@@ -3,13 +3,13 @@ const {normal_digital_style} = require('../share');
 module.exports = {
   id: 'other',
   component: '@byzanteam/vis-components/data-loader',
-  position: [63, 121],
+  position: [63, 191],
   exports: {
     results: 'results',
   },
 
   props: {
-    $url: "`/v1/components/89b74ddd-39de-493f-84ab-9d87fcf23fee/data?start=${craneStates.filterRange[0]}&end=${craneStates.filterRange[1]}`",
+    $url: "/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data",
     method: 'get',
     $data: "[[0]]",
     $style: {
@@ -25,9 +25,8 @@ module.exports = {
         'v-if': 'results',
         titlePosition: 'left',
         $content: {
-          title: '当月办件数量',
-          $digital: 'results[0][0]',
-          suffix: '件',
+          title: '其他',
+          $digital: 'results[0][2][2]',
         },
         $options: {
           separator: '',
