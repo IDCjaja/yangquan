@@ -26,7 +26,7 @@ module.exports = {
         titlePosition: 'left',
         $content: {
           title: '完成率',
-          $digital: 'Number(results[0][3])',
+          $digital: 'Number(results[0][4])',
           suffix: '%',
         },
         $options: {
