@@ -61,7 +61,7 @@ module.exports = {
         {
           component: '@byzanteam/map-ui/marker-point',
           vfor: {
-            data: 'yangquanGeoJson.features.map(item => ({label: item.properties.name, id: item.properties.name, location: item.properties.center}))',
+            data: 'markers',
           },
           props: {
             $marker: 'item',
