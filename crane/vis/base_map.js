@@ -10,7 +10,7 @@ module.exports = {
     method: 'get',
     $style: {
       width: '387px',
-      height: '384px',
+      height: '284px',
     }
   },
   children: [
@@ -22,6 +22,8 @@ module.exports = {
         features: 'none',
         mapStyle: 'amap://styles/cca20692c7b4da0b930eadd919d5a3fb',
         $useMapUi: 'true',
+        $zoomEnable: false,
+        $resizeEnable: true,
         $style: {
           width: '100%',
           height: '100%',
