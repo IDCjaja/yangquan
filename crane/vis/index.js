@@ -3,10 +3,13 @@ const { yangquanGeoJson }= require('../yangquanGeoJson');
 const map = require('./map');
 const allYear = require('./kpi_all_year_investment_digital');
 const fixedInvestment = require('./kpi_fixed_investment_digital');
+const fixedSpeed = require('./kpi_fixed_speed');
 const provinceMajor = require('./kpi_province_major_project_digital');
+const provinceSpeed = require('./kpi_province_speed');
 const funds = require('./kpi_funds_digital');
 const newProject = require('./kpi_new_project_digital');
 const workShop = require('./kpi_workshop_digital');
+const workShopSpeed = require('./kpi_workshop_speed');
 const city = require('./city_digital');
 const donut = require('./new_project_donut');
 const donut2 = require('./project_class_donut');
@@ -476,10 +479,13 @@ module.exports = {
     // map,
     allYear,
     fixedInvestment,
+    fixedSpeed,
     provinceMajor,
+    provinceSpeed,
     funds,
     newProject,
     workShop,
+    workShopSpeed,
     // city
     donut,
     // donut2
