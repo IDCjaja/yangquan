@@ -35,12 +35,14 @@ module.exports = {
             $areaStyle: {
               strokeColor: '#0158ff',
               strokeWeight: 1,
-              fillColor: 'rgba(1, 88, 255, .1)',
+              fillColor: 'rgb(1, 88, 255)',
+              $fillOpacity: '.1'
             },
             $areaHoverStyle: {
               strokeColor: '#0158ff',
               strokeWeight: 1,
-              fillColor: 'rgba(1, 88, 255, .4)',
+              fillColor: 'rgb(1, 88, 255)',
+              $fillOpacity: '.4'
             }
           },
           events: {
