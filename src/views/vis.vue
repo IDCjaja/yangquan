@@ -3,6 +3,7 @@
     <data-loader v-slot="{ results: results }" :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" url="/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data" method="get" :style="{width: '387px', height: '384px', position: 'absolute', top: '272px', left: '690px'}">
       <base-map :mapOptions="{center: [113.383285, 38.061188], zoom: 8}" features="none" mapStyle="amap://styles/cca20692c7b4da0b930eadd919d5a3fb" :useMapUi="true" :style="{width: '100%', height: '100%', transform: `scale(${1/getMapScale()})`, position: 'absolute', top: '0px', left: '0px'}">
         <regions @area-clicked="()=>[areaClickFunc]" :areas="yangquanGeoJson.features" :areaStyle="{strokeColor: '#32c5ff', strokeWeight: '1', fillColor: 'rgba(1, 88, 255, .1)'}" :areaHoverStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgba(1, 88, 255, .4)'}" />
+        <marker-point v-for="item in yangquanGeoJson.features.map(item => ({label: item.properties.name, id: item.properties.name, location: item.properties.center}))" :key="item.id" :marker="item" :markerStyle="{color: '#fff', strokeColor: '#32c5ff', strokeWidth: 2}" />
       </base-map>
     </data-loader>
     <data-loader ref="investment" v-slot="{ results: results }" url="/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c/data" method="get" :data="[[0]]" :style="{width: '900px', height: '384px', position: 'absolute', top: '676px', left: '510px'}">
@@ -33,6 +34,7 @@ import {
 import {
   BaseMap,
   Regions,
+  MarkerPoint,
 } from '@byzanteam/map-ui'
 
 export const vis = {
@@ -43,6 +45,7 @@ export const vis = {
     VisTable,
     BaseMap,
     Regions,
+    MarkerPoint,
   },
 
   data () {

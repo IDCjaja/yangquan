@@ -50,6 +50,20 @@ module.exports = {
             },
           },
         },
+        {
+          component: '@byzanteam/map-ui/marker-point',
+          vfor: {
+            data: 'yangquanGeoJson.features.map(item => ({label: item.properties.name, id: item.properties.name, location: item.properties.center}))',
+          },
+          props: {
+            $marker: 'item',
+            $markerStyle: {
+              color: '#fff',
+              strokeColor: '#32c5ff',
+              $strokeWidth: 2
+            }
+          }
+        }
       ]
     }
   ]
