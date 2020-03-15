@@ -34,7 +34,7 @@ module.exports = {
   ],
 
   components: [
-    // 各个区域标题
+    // 各个区域标题及外层border盒子
     {
       id: 'six-title-icon',
       component: 'div',
@@ -71,6 +71,19 @@ module.exports = {
           width: '410px',
           height: '1px',
           backgroundColor: '#ECF1F3'
+        }
+      }
+    },
+    {
+      id: 'six-border-box',
+      component: 'div',
+      position: [1430, 40],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '450px',
+          height: '633px'
         }
       }
     },
@@ -114,6 +127,19 @@ module.exports = {
         }
       }
     },
+    {
+      id: 'project-border-box',
+      component: 'div',
+      position: [40, 272],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '450px',
+          height: '384px'
+        }
+      }
+    },
 
     {
       id: 'new-title-icon',
@@ -154,6 +180,19 @@ module.exports = {
         }
       }
     },
+    {
+      id: 'new-border-box',
+      component: 'div',
+      position: [40, 676],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '450px',
+          height: '384px'
+        }
+      }
+    },
 
     {
       id: 'city-title-icon',
@@ -183,7 +222,7 @@ module.exports = {
       }
     },
     {
-      id: 'six-title-line',
+      id: 'city-title-line',
       component: 'div',
       position: [1450, 758],
       props: {
@@ -191,6 +230,19 @@ module.exports = {
           width: '410px',
           height: '1px',
           backgroundColor: '#ECF1F3'
+        }
+      }
+    },
+    {
+      id: 'city-border-box',
+      component: 'div',
+      position: [1430, 693],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '450px',
+          height: '367px'
         }
       }
     },
