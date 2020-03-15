@@ -9,12 +9,12 @@ module.exports = {
     response: 'response',
   },
   props: {
-    $url: "`/v1/components/1314138c-beef-43b1-ae74-989d98c73f5e/data`",
+    $url: "`/v1/components/1accfeec-bb91-41ca-9f4c-d53662aea01e/data`",
     method: 'get',
     $data: "[[0]]",
     $style: {
-      width: '300px',
-      height: '310px',
+      width: '450px',
+      height: '324px',
     },
   },
   children: [
@@ -22,8 +22,8 @@ module.exports = {
       id: 'project-class-content',
       component: '@byzanteam/graphite/donut',
       props: {
-        // 'v-if': 'results',
-        $data: "results.map((item, index) => ({label: craneStates.donutMap[response.schema[index].field], amount: item }) )",
+        'v-if': 'results',
+        $data: "results.map(item => { return {label: item[0], amount: item[1] } } )",
         labelKey: 'label',
         valueKey: 'amount',
         $percentage: true,

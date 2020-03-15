@@ -9,7 +9,7 @@ const funds = require('./kpi_funds_digital');
 const newProject = require('./kpi_new_project_digital');
 const workShop = require('./kpi_workshop_digital');
 const workShopSpeed = require('./kpi_workshop_speed');
-const donut = require('./new_project_donut');
+const donut = require('./project_class_donut');
 module.exports = {
   route: {
     name: 'vis',
