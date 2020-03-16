@@ -1,11 +1,5 @@
 <template>
   <div class="vis">
-    <data-loader :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" url="/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data" method="get" :style="{width: '457px', height: '344px', position: 'absolute', top: '292px', left: '540px'}">
-      <base-map :mapOptions="{center: [113.383285, 38.061188], zoom: 8}" features="none" mapStyle="amap://styles/cca20692c7b4da0b930eadd919d5a3fb" :useMapUi="true" :zoomEnable="false" :resizeEnable="true" :style="{width: '100%', height: '100%', transform: `scale(${1/getMapScale()})`, position: 'absolute', top: '0px', left: '0px'}">
-        <regions @area-clicked="(json, area, vm)=>[areaClickedFunc(json, area, vm)]" @area-mouseover="(json, area, vm)=>[areaMouseoverFunc(json, area, vm)]" @area-mouseout="(json, area, vm)=>[areaMouseoutFunc(json, area, vm)]" :areas="areas" :areaStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .1}" :areaHoverStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .4}" />
-        <info-window ref="infowindowRef" :options="{closeWhenClickMap: true, isCustom: true}" />
-      </base-map>
-    </data-loader>
     <div ref="six-title-icon" :style="{height: '20px', width: '4px', borderRadius: '2px', backgroundColor: '#0158ff', position: 'absolute', top: '62px', left: '1450px'}" />
     <div ref="six-title-text" :style="{fontsize: '20px', color: '#6b7885', lineHeight: '1', fontWeight: '500', position: 'absolute', top: '64px', left: '1466px'}">
       六大指标
@@ -33,12 +27,12 @@
     <div ref="city-content" :style="{width: '410px', height: '287px', fontSize: '14px', color: '#313c56', lineHeight: '2', position: 'absolute', top: '778px', left: '1450px'}">
       年初，全市初步计划实施项目318个，总投资1557.5亿元，年度计划投资267.5亿元。为进一步夯实全市投资基础，确保顺利完成年度投资任务，我们于4月、5月多次组织各县区对今年建设项目库进行对接充实。截至5月底，全市建设项目360个，年度计划投资299.85亿元。其中，基础设施类项目58个，年度计划投资61.3亿元，占全年计划投资的20.4%；产业类项目179个，年度计划投资163.15元，占全年计划投资的54.4%；社会民生类项目123个，年度计划投资75.39亿元，占全年计划投资的25.2%。
     </div>
-    <div ref="new-title-icon" :style="{height: '20px', width: '4px', borderRadius: '2px', backgroundColor: '#0158ff', position: 'absolute', top: '697px', left: '530px'}" />
-    <div ref="new-title-text" :style="{fontsize: '20px', color: '#6b7885', lineHeight: '1', fontWeight: '500', position: 'absolute', top: '698px', left: '546px'}">
+    <div ref="new-title-icon" :style="{height: '20px', width: '4px', borderRadius: '2px', backgroundColor: '#0158ff', position: 'absolute', top: '707px', left: '530px'}" />
+    <div ref="new-title-text" :style="{fontsize: '20px', color: '#6b7885', lineHeight: '1', fontWeight: '500', position: 'absolute', top: '708px', left: '546px'}">
       投资预计分析
     </div>
-    <div ref="new-title-line" :style="{width: '860px', height: '1px', backgroundColor: '#ECF1F3', position: 'absolute', top: '740px', left: '530px'}" />
-    <div ref="new-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '900px', height: '384px', position: 'absolute', top: '676px', left: '510px'}" />
+    <div ref="new-title-line" :style="{width: '860px', height: '1px', backgroundColor: '#ECF1F3', position: 'absolute', top: '750px', left: '530px'}" />
+    <div ref="new-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '900px', height: '374px', position: 'absolute', top: '686px', left: '510px'}" />
     <div ref="province-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '272px', left: '1117px'}" />
     <div ref="city-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '406px', left: '1117px'}" />
     <div ref="other-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '541px', left: '1117px'}" />
@@ -130,7 +124,7 @@
       <digital-roll ref="other-digital" v-if="results" titlePosition="bottom" :content="{title: '其他', digital: results[2][1]}" :options="{separator: ''}" :titleStyle="{color: '#9dacbe', fontSize: '14px', lineHeight: '1.5'}" :suffixStyle="{fontSize: '14px', color: '#9dacbe'}" :digitalStyle="{fontSize: '40px', color: '#313c56', fontFamily: 'Oswald', lineHeight: '1'}" />
     </data-loader>
     <data-loader ref="investment" v-slot="{ results: results }" url="/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c/data" method="get" :data="[[0]]" :style="{width: '860px', height: '280px', position: 'absolute', top: '760px', left: '530px'}">
-      <vis-table ref="investment-table" v-if="results" stripe="row" :headers="[{key: 'name', title: '项目名称'}, {key: 'finished', title: '已完成投资额'}, {key: 'total', title: '项目总投资'}, {key: 'percetage', title: '已投资比率'}, {key: 'status', title: '预警标识'}]" :data="results.map(item => ({name: item[0], finished: `${item[1]} 亿元`, total: `${item[2]} 亿元`, percetage: `${item[3]}%`, status: item[4]}))">
+      <vis-table ref="investment-table" v-if="results" stripe="row" :headers="[{key: 'name', title: '项目名称'}, {key: 'finished', title: '已完成投资额'}, {key: 'total', title: '项目总投资'}, {key: 'percetage', title: '已投资比率'}, {key: 'status', title: '预警标识'}]" :data="results.map(item => ({name: item[0], finished: `${item[1]} 亿元`, total: `${item[2]} 亿元`, percetage: `${item[3]}%`, status: item[4]}))" :style="{height: '290px'}" >
         <template v-slot="{ cell: cell, columnKey: columnKey }">
           <span class="badge" :class="cell" v-if="columnKey=== 'status'">
             {{craneStates.statusMap[cell]}}
@@ -144,6 +138,9 @@
     <data-loader ref="new-project" v-slot="{ results: results }" :url="`/v1/components/1314138c-beef-43b1-ae74-989d98c73f5e/data`" method="get" :data="[{label: '新建项目进度', amount: 12}]" :style="{width: '450px', height: '324px', position: 'absolute', top: '740px', left: '40px'}">
       <donut ref="new-project-donut" v-if="results" :data="results.map((item, index) => ({label: craneStates.donutMap[item[0]], amount: item[1] }) )" labelKey="label" valueKey="amount" :percentage="true" :innerRadius="0.48" :theme="{background: 'transparent', colors: ['#EFC11E', '#FD5080', '#0158FF'], whitespace: 'nowrap'}" :legendOptions="{size: '70px', align: ['center', 'start'], layout: 'horizontal', label: {fill: '#2E2E2E', size: 14}, position: 'bottom'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#007AFE', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
+    <data-loader ref="chartDataRef" :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" method="get" :style="{width: '587px', height: '510px', position: 'absolute', top: '212px', left: '510px'}">
+      <v-chart ref="chartRef" :options="options" :style="{width: '100%', height: '100%', position: 'absolute', top: '0px', left: '0px'}" />
+    </data-loader>
   </div>
 </template>
 
@@ -151,7 +148,15 @@
 import _  from 'lodash'
 import axios from 'axios'
 import BuiltInMixin from '../mixins/built_in'
+import Echarts from 'vue-echarts'
+import 'echarts/lib/chart/scatter'
+import 'echarts/lib/chart/effectScatter'
+import 'echarts/lib/component/geo'
+import 'echarts/lib/chart/map'
+import 'echarts/lib/component/tooltip'
 import { yangquanGeoJson } from '../../crane/yangquanGeoJson';
+
+Echarts.registerMap('yangquan', yangquanGeoJson);
 
 import {
   DataLoader,
@@ -180,11 +185,83 @@ export const vis = {
     MarkerPoint,
     InfoWindow,
     Donut,
+    'v-chart': Echarts,
   },
 
   data () {
     return {
       yangquanGeoJson: yangquanGeoJson,
+      options: {
+        backgroundColor: 'transparent',
+        geo: {
+          map: 'yangquan',
+          label: {
+            normal: {
+              show: false,
+              color: '#fff',
+              align: 'left',
+              borderRadius: 4,
+              padding: [8, 8],
+              backgroundColor: '#313c56',
+              align: 'left',
+              rich: {
+                a: {
+                  width: 190,
+                  padding: [0, 0],
+                  align: 'left',
+                  lineHeight: 14,
+                  fontSize: 14,
+                  color: 'rgba(255, 255, 255)',
+                },
+                b:{
+                  width: 20,
+                  align: 'left',
+                  padding: [0, 0],
+                  lineHeight: 14,
+                  fontSize: 14,
+                  color: 'rgba(255, 255, 255, .4)'
+                }
+              },
+              formatter: this.geoLabelHoverFormatter
+            },
+          emphasis: {color: '#fff'}
+        },
+        itemStyle: {
+          normal: {
+            areaColor: 'rgba(1, 88, 255, .1)',
+            borderColor: '#0158ff',
+            borderWidth: 1,
+          },
+          emphasis: {
+            areaColor: 'rgba(1, 88, 255, .4)'
+          }
+        },
+        z: '1'
+      },
+      series: [
+        {
+          type: 'scatter',
+          coordinateSystem: 'geo',
+          data: [],
+          symbolSize: 3,
+          itemStyle: {
+            normal: {color: '#c05746'}
+          }
+        },
+        {
+          type: 'scatter',
+          coordinateSystem: 'geo',
+          data: yangquanGeoJson.features.map(feature => ({name: feature.properties.name, value: feature.properties.center})),
+          itemStyle: {
+            normal: {
+              color: 'transparent'
+            }
+          },
+          label: {
+            formatter: '{b}', show: true, color: '#333333', fontSize: 10}
+          }
+        ]
+      },
       counts: [[]],
       craneStates: {
         statusMap: {red: '异常', green: '正常', yellow: '预警'},
@@ -212,92 +289,30 @@ export const vis = {
     }
   },
 
+  watch: {
+    counts (value) {
+      if(!_.isEmpty(value)) {
+        this.$refs.chartRef.chart.setOption(this.options)
+      }
+    }
+  },
+
   created() {
     this._requestAreaData();
     document.title = '阳泉重点项目管理平台'
   },
 
   methods: {
-    areaClickedFunc (json, area, vm) {
-      if(this.isPC()) {
-        return
-      }
-      this.triggerSelect(json, area, vm)
-    },
-
-    areaMouseoverFunc (json, area, vm) {
-      this.triggerSelect(json, area, vm)
-    },
-
-    areaMouseoutFunc () {
-      this.$refs.infowindowRef.close()
-    },
-
-    triggerSelect (json, area, vm) {
-      this.selectedArea = this.selectedArea === json.properties.name ? '' : json.properties.name
-      if (this.selectedArea) {
-        if(this.$refs.infowindowRef.infoWindow) {
-          this.$refs.infowindowRef.close()
-          this._creatInfoWindow(json)
-        } else {
-          this._creatInfoWindow(json)
-        }
-      }
-    },
-
-    getMapScale () {
-      const scaleValue = document.body.style.transform.match(/scale\(([\.\d]+)\)/)[1]
-      return scaleValue
-    },
-
-    isPC () {
-      var userAgentInfo = navigator.userAgent;
-      var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
-      var flag = true;
-      for (var v = 0; v < Agents.length; v++) {
-        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
-      }
-      return flag;
-    },
-
-    _creatInfoWindow (json) {
-      const content = `<div class='personal-info-container'>
-          <div class="info-address">${json.properties.name}</div>
-          <div class="info-name">固定资产投资</div>
-          <div class="info-title">当年累计投资额: ${json.properties.first} 亿元</div>
-          <div class="info-title-speed">同比增速: ${json.properties.second}%</div>
-          <div class="info-name">省市重点工程</div>
-          <div class="info-title">当年累计投资额: ${json.properties.third} 亿元</div>
-          <div class="info-title-speed">完成率: ${json.properties.fourth}%</div>
-          <div class="info-name">全年项目库投资</div>
-          <div class="info-title-speed">开工率: ${json.properties.fifth}%</div>
-          <div class="info-name">新建项目开工</div>
-          <div class="info-title-speed">开工率: ${json.properties.sixth}%</div>
-          <div class="info-name">国省资金争取</div>
-          <div class="info-title-speed">争取资金额: ${json.properties.seventh} 亿元</div>
-          <div class="info-name">标准厂房建设</div>
-          <div class="info-title">累计建设面积: ${json.properties.eighth} 万平方米</div>
-          <div class="info-title">完成率: ${json.properties.nineth}%</div>
-        </div>`
-      this.$refs.infowindowRef.createInfoWindow({content: content, location: json.properties.center})
+    geoLabelHoverFormatter (param) {
+      var counts = this.counts.find(item => {
+        return param.name === item[0]
+      }) || [0, 0, 0, 0, 0]
+      return `\{a|${param.name}\}\n\n\{b|固定资产投资\}\n\{a|当年累计投资额：${counts[1]} 亿元\n同比增速：${counts[2] || 0}%\}\n\n\{b|省市重点工程\}\n\{a|当年累计投资额：${counts[3] || 0} 亿元\n完成率：${counts[4] || 0}%\}\n\n\{b|全年项目库投资\}\n\{a|开工率：${counts[5] || 0}%\}\n\n\{b|新建项目开工\}\n\{a|开工率：${counts[6] || 0}%\}\n\n\{b|国省资金争取\}\n\{a|争取资金额：${counts[7] || 0} 亿元\}\n\n\{b|标准厂房建设\}\n\{a|累计建设面积：${counts[8] || 0} 平方米\n完成率：${counts[9] || 0}%\}`
     },
 
     _requestAreaData() {
       axios.get('/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data').then(({data: {data, schema}}) => {
-        this.counts = data.map(area => {
-          return {
-            name: area[0],
-            first: area[1],
-            second: area[2],
-            third: area[3],
-            fourth: area[4],
-            fifth: area[5],
-            sixth: area[6],
-            seventh: area[7],
-            eighth: area[8],
-            nineth: area[9] || 0
-          }
-        })
+        this.counts = data
       });
     }
   }

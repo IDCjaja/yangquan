@@ -1,5 +1,5 @@
 const investmentTable = require('./investment_table')
-const map = require('./base_map')
+const map = require('./map')
 const allYear = require('./kpi_all_year_investment_digital');
 const fixedInvestment = require('./kpi_fixed_investment_digital');
 const fixedSpeed = require('./kpi_fixed_speed');
@@ -277,7 +277,7 @@ module.exports = {
     {
       id: 'new-title-icon',
       component: 'div',
-      position: [530, 697],
+      position: [530, 707],
       props: {
         $style: {
           height: '20px',
@@ -291,7 +291,7 @@ module.exports = {
       id: 'new-title-text',
       component: 'div',
       content: '投资预计分析',
-      position: [546, 698],
+      position: [546, 708],
       props: {
         $style: {
           fontsize: '20px',
@@ -304,7 +304,7 @@ module.exports = {
     {
       id: 'new-title-line',
       component: 'div',
-      position: [530, 740],
+      position: [530, 750],
       props: {
         $style: {
           width: '860px',
@@ -316,7 +316,7 @@ module.exports = {
     {
       id: 'new-border-box',
       component: 'div',
-      position: [510, 676],
+      position: [510, 686],
       props: {
         $style: {
           border: '1px solid #ecf1f3',
