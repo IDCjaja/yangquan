@@ -213,7 +213,8 @@ export const vis = {
   },
 
   created() {
-    this._requestAreaData()
+    this._requestAreaData();
+    document.title = '阳泉重点项目管理平台'
   },
 
   methods: {
