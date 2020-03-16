@@ -24,15 +24,15 @@
     </div>
     <div ref="city-title-line" :style="{width: '410px', height: '1px', backgroundColor: '#ECF1F3', position: 'absolute', top: '758px', left: '1450px'}" />
     <div ref="city-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '450px', height: '367px', position: 'absolute', top: '693px', left: '1430px'}" />
+    <div ref="city-content" :style="{width: '410px', height: '287px', fontSize: '14px', color: '#313c56', lineHeight: '2', position: 'absolute', top: '778px', left: '1450px'}">
+      年初，全市初步计划实施项目318个，总投资1557.5亿元，年度计划投资267.5亿元。为进一步夯实全市投资基础，确保顺利完成年度投资任务，我们于4月、5月多次组织各县区对今年建设项目库进行对接充实。截至5月底，全市建设项目360个，年度计划投资299.85亿元。其中，基础设施类项目58个，年度计划投资61.3亿元，占全年计划投资的20.4%；产业类项目179个，年度计划投资163.15元，占全年计划投资的54.4%；社会民生类项目123个，年度计划投资75.39亿元，占全年计划投资的25.2%。
+    </div>
     <div ref="new-title-icon" :style="{height: '20px', width: '4px', borderRadius: '2px', backgroundColor: '#0158ff', position: 'absolute', top: '697px', left: '530px'}" />
     <div ref="new-title-text" :style="{fontsize: '20px', color: '#6b7885', lineHeight: '1', fontWeight: '500', position: 'absolute', top: '698px', left: '546px'}">
       投资预计分析
     </div>
     <div ref="new-title-line" :style="{width: '960px', height: '1px', backgroundColor: '#ECF1F3', position: 'absolute', top: '740px', left: '510px'}" />
     <div ref="new-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '900px', height: '384px', position: 'absolute', top: '676px', left: '510px'}" />
-    <div ref="city-content" :style="{width: '410px', height: '287px', fontSize: '14px', color: '#313c56', lineHeight: '2', position: 'absolute', top: '778px', left: '1450px'}">
-      年初，全市初步计划实施项目318个，总投资1557.5亿元，年度计划投资267.5亿元。为进一步夯实全市投资基础，确保顺利完成年度投资任务，我们于4月、5月多次组织各县区对今年建设项目库进行对接充实。截至5月底，全市建设项目360个，年度计划投资299.85亿元。其中，基础设施类项目58个，年度计划投资61.3亿元，占全年计划投资的20.4%；产业类项目179个，年度计划投资163.15元，占全年计划投资的54.4%；社会民生类项目123个，年度计划投资75.39亿元，占全年计划投资的25.2%。
-    </div>
     <div ref="banner" :style="{width: '1370px', height: '212px', position: 'absolute', top: '40px', left: '40px'}">
       <img ref="bannerImg" :style="{height: '100%'}" src="/yqfw/image/image_banner_bg.png" />
     </div>
@@ -53,6 +53,15 @@
     </div>
     <div ref="work-box" :style="{width: '60px', height: '60px', borderRadius: '6px', backgroundColor: '#fd5080', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '590px', left: '1450px'}">
       <img ref="work-img" :style="{height: '24px'}" src="/yqfw/image/icon 08.svg" />
+    </div>
+    <div ref="province-box" :style="{width: '60px', height: '60px', borderRadius: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '300px', left: '1157px'}">
+      <img ref="province-img" :style="{height: '24px'}" src="/yqfw/image/icon 01.svg" />
+    </div>
+    <div ref="city-box" :style="{width: '60px', height: '60px', borderRadius: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '434px', left: '1157px'}">
+      <img ref="city-img" :style="{height: '24px'}" src="/yqfw/image/icon 02.svg" />
+    </div>
+    <div ref="other-box" :style="{width: '60px', height: '60px', borderRadius: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '569px', left: '1157px'}">
+      <img ref="other-img" :style="{height: '24px'}" src="/yqfw/image/icon 03.svg" />
     </div>
     <div ref="fixed-title" :style="{color: '#9DACBE', fontsize: '18px', fontWeight: '500', lineHeight: '1', position: 'absolute', top: '132px', left: '1538px'}">
       固定资产投资
@@ -101,6 +110,15 @@
     </data-loader>
     <data-loader ref="project-class" v-slot="{ results: results, response: response }" :url="`/v1/components/1accfeec-bb91-41ca-9f4c-d53662aea01e/data`" method="get" :data="[[0]]" :style="{width: '450px', height: '324px', position: 'absolute', top: '336px', left: '40px'}">
       <donut ref="project-class-content" v-if="results" :data="results.map(item => { return {label: item[0], amount: item[1] } } )" labelKey="label" valueKey="amount" :percentage="true" :innerRadius="0.48" :theme="{background: 'transparent', colors: ['#EFC11E', '#0158FF'], whitespace: 'nowrap'}" :legendOptions="{size: '70px', align: ['center', 'Fd5080', 'start'], layout: 'horizontal', label: {fill: '#2E2E2E', size: 14}, position: 'bottom'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#007AFE', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
+    </data-loader>
+    <data-loader ref="city" v-slot="{ results: results }" :url="`/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data`" method="get" :data="[['', 0]]" :style="{width: '194px', height: '44px', position: 'absolute', top: '431px', left: '1245px'}">
+      <digital-roll ref="city-digital" titlePosition="bottom" :content="{title: '市级重点项目', digital: results[0][1]}" :options="{separator: ''}" :titleStyle="{color: '#9dacbe', fontSize: '14px', lineHeight: '1.5'}" :suffixStyle="{fontSize: '14px', color: '#9dacbe'}" :digitalStyle="{fontSize: '40px', color: '#313c56', fontFamily: 'Oswald', lineHeight: '1'}" />
+    </data-loader>
+    <data-loader ref="province" v-slot="{ results: results }" :url="`/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data`" method="get" :data="[['', 0]]" :style="{width: '194px', height: '44px', position: 'absolute', top: '297px', left: '1245px'}">
+      <digital-roll ref="province-digital" v-if="results" titlePosition="bottom" :content="{title: '省级重点项目', digital: results[1][1]}" :options="{separator: ''}" :titleStyle="{color: '#9dacbe', fontSize: '14px', lineHeight: '1.5'}" :suffixStyle="{fontSize: '14px', color: '#9dacbe'}" :digitalStyle="{fontSize: '40px', color: '#313c56', fontFamily: 'Oswald', lineHeight: '1'}" />
+    </data-loader>
+    <data-loader ref="other" v-slot="{ results: results }" :url="`/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data`" method="get" :data="[['', 0]]" :style="{width: '194px', height: '44px', position: 'absolute', top: '566px', left: '1245px'}">
+      <digital-roll ref="other-digital" v-if="results" titlePosition="bottom" :content="{title: '其他', digital: results[2][1]}" :options="{separator: ''}" :titleStyle="{color: '#9dacbe', fontSize: '14px', lineHeight: '1.5'}" :suffixStyle="{fontSize: '14px', color: '#9dacbe'}" :digitalStyle="{fontSize: '40px', color: '#313c56', fontFamily: 'Oswald', lineHeight: '1'}" />
     </data-loader>
     <data-loader :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" url="/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data" method="get" :style="{width: '457px', height: '344px', position: 'absolute', top: '292px', left: '540px'}">
       <base-map :mapOptions="{center: [113.383285, 38.061188], zoom: 8}" features="none" mapStyle="amap://styles/cca20692c7b4da0b930eadd919d5a3fb" :useMapUi="true" :zoomEnable="false" :resizeEnable="true" :style="{width: '100%', height: '100%', transform: `scale(${1/getMapScale()})`, position: 'absolute', top: '0px', left: '0px'}">

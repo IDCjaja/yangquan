@@ -325,6 +325,45 @@ module.exports = {
       }
     },
 
+    {
+      id: 'province-border-box',
+      component: 'div',
+      position: [1117, 272],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '294px',
+          height: '114px'
+        }
+      }
+    },
+    {
+      id: 'city-border-box',
+      component: 'div',
+      position: [1117, 406],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '294px',
+          height: '114px'
+        }
+      }
+    },
+    {
+      id: 'other-border-box',
+      component: 'div',
+      position: [1117, 541],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '294px',
+          height: '114px'
+        }
+      }
+    },
 
     // digital图标; 六大指标图片，和省市级的3个
     {
@@ -527,7 +566,8 @@ module.exports = {
         $style: {
           width: '60px',
           height: '60px',
-          borderRadius: '6px',
+          borderRadius: '30px',
+          backgroundColor: '#0158ff0D',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center'
@@ -554,7 +594,8 @@ module.exports = {
         $style: {
           width: '60px',
           height: '60px',
-          borderRadius: '6px',
+          borderRadius: '30px',
+          backgroundColor: '#EFC11E0D',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center'
@@ -581,7 +622,8 @@ module.exports = {
         $style: {
           width: '60px',
           height: '60px',
-          borderRadius: '6px',
+          borderRadius: '30px',
+          backgroundColor: '#fd50800D',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center'
