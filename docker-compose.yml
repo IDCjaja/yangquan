@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   web:
-    image: registry.cn-hangzhou.aliyuncs.com/byzanteam/dcpbp
+    image: registry.cn-hangzhou.aliyuncs.com/byzanteam/yangquan-vis:dev
     ports:
       - 00:80
     environment:
