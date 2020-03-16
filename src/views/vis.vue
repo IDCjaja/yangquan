@@ -125,8 +125,7 @@
     </data-loader>
     <data-loader :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" url="/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data" method="get" :style="{width: '457px', height: '344px', position: 'absolute', top: '292px', left: '540px'}">
       <base-map :mapOptions="{center: [113.383285, 38.061188], zoom: 8}" features="none" mapStyle="amap://styles/cca20692c7b4da0b930eadd919d5a3fb" :useMapUi="true" :zoomEnable="false" :resizeEnable="true" :style="{width: '100%', height: '100%', transform: `scale(${1/getMapScale()})`, position: 'absolute', top: '0px', left: '0px'}">
-        <regions @area-clicked="(json, area, vm)=>[areaClickedFunc(json, area, vm)]" @area-mouseover="(json, area, vm)=>[areaMouseoverFunc(json, area, vm)]" @area-mouseout="(json, area, vm)=>[areaMouseoutFunc(json, area, vm)]" :areas="areas" :areaStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .1}" :areaHoverStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgba(1, 88, 255)', fillOpacity: .4,}" />
-        <marker-point v-for="item in markers" :key="item.id" :marker="item" :markerStyle="{color: '#fff', size: 8, strokeColor: '#0158ff', strokeWidth: 2}" :innerLabelStyle="{color: '#6b7885', fontSize: '10', padding: [2, 4], offset: [6, -7]}" />
+        <regions @area-clicked="(json, area, vm)=>[areaClickedFunc(json, area, vm)]" @area-mouseover="(json, area, vm)=>[areaMouseoverFunc(json, area, vm)]" @area-mouseout="(json, area, vm)=>[areaMouseoutFunc(json, area, vm)]" :areas="areas" :areaStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .1}" :areaHoverStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .4}" />
         <info-window ref="infowindowRef" :options="{closeWhenClickMap: true, isCustom: true}" />
       </base-map>
     </data-loader>
@@ -262,18 +261,19 @@ export const vis = {
 
     _creatInfoWindow (json) {
       const content = `<div class='personal-info-container'>
+          <div class="info-address">${json.properties.name}</div>
           <div class="info-name">固定资产投资</div>
           <div class="info-title">当年累计投资额: ${json.properties.first} 亿元</div>
-          <div class="info-title">同比增速: ${json.properties.second}%</div>
+          <div class="info-title-speed">同比增速: ${json.properties.second}%</div>
           <div class="info-name">省市重点工程</div>
           <div class="info-title">当年累计投资额: ${json.properties.third} 亿元</div>
-          <div class="info-title">完成率: ${json.properties.fourth}%</div>
+          <div class="info-title-speed">完成率: ${json.properties.fourth}%</div>
           <div class="info-name">全年项目库投资</div>
-          <div class="info-title">开工率: ${json.properties.fifth}%</div>
+          <div class="info-title-speed">开工率: ${json.properties.fifth}%</div>
           <div class="info-name">新建项目开工</div>
-          <div class="info-title">开工率: ${json.properties.sixth}%</div>
+          <div class="info-title-speed">开工率: ${json.properties.sixth}%</div>
           <div class="info-name">国省资金争取</div>
-          <div class="info-title">争取资金额: ${json.properties.seventh} 亿元</div>
+          <div class="info-title-speed">争取资金额: ${json.properties.seventh} 亿元</div>
           <div class="info-name">标准厂房建设</div>
           <div class="info-title">累计建设面积: ${json.properties.eighth} 万平方米</div>
           <div class="info-title">完成率: ${json.properties.nineth}%</div>
