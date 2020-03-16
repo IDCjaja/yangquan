@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/crane-target
+/阳泉重点项目管理平台
 
 # local env files
 .env.local

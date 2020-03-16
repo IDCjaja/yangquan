@@ -61,27 +61,6 @@ module.exports = {
           },
         },
         {
-          component: '@byzanteam/map-ui/marker-point',
-          vfor: {
-            data: 'markers',
-          },
-          props: {
-            $marker: 'item',
-            $markerStyle: {
-              color: '#fff',
-              $size: 8,
-              strokeColor: '#0158ff',
-              $strokeWidth: 2
-            },
-            $innerLabelStyle: {
-              color: '#6b7885',
-              fontSize: 10,
-              $padding: "[2, 4]",
-              $offset: "[6, -7]"
-            }
-          }
-        },
-        {
           id: 'infowindowRef',
           component: '@byzanteam/map-ui/info-window',
           props: {

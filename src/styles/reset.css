@@ -68,3 +68,17 @@
 .amap-logo {
   display: none !important;
 }
+
+.info-address {
+  margin-bottom: 8px;
+}
+
+.info-title-speed {
+  margin-bottom: 8px;
+}
+th:first-child {
+  width: 33.33%;
+}
+td:first-child {
+  width: 33.33%;
+}

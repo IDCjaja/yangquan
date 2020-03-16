@@ -34,19 +34,19 @@ const chartTooltipOptions = {
 exports.chartTooltipOptions = chartTooltipOptions;
 exports.normal_digital_style = {
   $titleStyle: {
-    color: 'rgba(0, 0, 0)',
+    color: '#9dacbe',
     fontSize: '14px',
-    fontWeight: 500,
+    lineHeight: 1.5
   },
   $suffixStyle: {
     fontSize: '14px',
-    fontWeight: 400,
+    color: '#9dacbe',
   },
   $digitalStyle: {
-    fontSize: '36px',
-    color: '#000000',
-    fontWeight: 400,
+    fontSize: '40px',
+    color: '#313c56',
     fontFamily: 'Oswald',
+    lineHeight: 1,
   },
 };
 exports.kpi_digital_style = {

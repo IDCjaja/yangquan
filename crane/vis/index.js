@@ -10,13 +10,18 @@ const newProject = require('./kpi_new_project_digital');
 const workShop = require('./kpi_workshop_digital');
 const workShopSpeed = require('./kpi_workshop_speed');
 const donut = require('./project_class_donut');
+const cityDigital = require('./city_digital');
+const provinceDigital = require('./province_digital');
+const otherDigital = require('./other_digital');
+const newProjectClass = require('./new_project_donut');
+
 module.exports = {
   route: {
     name: 'vis',
     path: 'vis',
   },
 
-  title: '考勤看板',
+  title: '阳泉重点项目管理平台',
 
   states: [
     {
@@ -250,6 +255,23 @@ module.exports = {
         }
       }
     },
+    {
+      id: 'city-content',
+      component: 'div',
+      position: [1450, 778],
+      content: '年初，全市初步计划实施项目318个，总投资1557.5亿元，年度计划投资267.5亿元。为进一步夯实全市投资基础，确保顺利完成年度投资任务，我们于4月、5月多次组织各县区对今年建设项目库进行对接充实。截至5月底，全市建设项目360个，年度计划投资299.85亿元。其中，基础设施类项目58个，年度计划投资61.3亿元，占全年计划投资的20.4%；产业类项目179个，年度计划投资163.15元，占全年计划投资的54.4%；社会民生类项目123个，年度计划投资75.39亿元，占全年计划投资的25.2%。',
+      props: {
+        $style: {
+          width: '410px',
+          height: '287px',
+          fontSize: '14px',
+          color: '#313c56',
+          lineHeight: 2,
+
+
+        }
+      }
+    },
 
     {
       id: 'new-title-icon',
@@ -281,10 +303,10 @@ module.exports = {
     {
       id: 'new-title-line',
       component: 'div',
-      position: [510, 740],
+      position: [530, 740],
       props: {
         $style: {
-          width: '960px',
+          width: '860px',
           height: '1px',
           backgroundColor: '#ECF1F3'
         }
@@ -305,24 +327,46 @@ module.exports = {
     },
 
     {
-      id: 'city-content',
+      id: 'province-border-box',
       component: 'div',
-      position: [1450, 778],
-      content: '年初，全市初步计划实施项目318个，总投资1557.5亿元，年度计划投资267.5亿元。为进一步夯实全市投资基础，确保顺利完成年度投资任务，我们于4月、5月多次组织各县区对今年建设项目库进行对接充实。截至5月底，全市建设项目360个，年度计划投资299.85亿元。其中，基础设施类项目58个，年度计划投资61.3亿元，占全年计划投资的20.4%；产业类项目179个，年度计划投资163.15元，占全年计划投资的54.4%；社会民生类项目123个，年度计划投资75.39亿元，占全年计划投资的25.2%。',
+      position: [1117, 272],
       props: {
         $style: {
-          width: '410px',
-          height: '287px',
-          fontSize: '14px',
-          color: '#313c56',
-          lineHeight: 2,
-
-
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '294px',
+          height: '114px'
+        }
+      }
+    },
+    {
+      id: 'city-border-box',
+      component: 'div',
+      position: [1117, 406],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '294px',
+          height: '114px'
+        }
+      }
+    },
+    {
+      id: 'other-border-box',
+      component: 'div',
+      position: [1117, 541],
+      props: {
+        $style: {
+          border: '1px solid #ecf1f3',
+          borderRadius: '8px',
+          width: '294px',
+          height: '114px'
         }
       }
     },
 
-    // 六大指标图片
+    // digital图标; 六大指标图片，和省市级的3个
     {
       id: 'banner',
       component: 'div',
@@ -514,6 +558,92 @@ module.exports = {
         }
       ]
     },
+
+    {
+      id: 'province-box',
+      component: 'div',
+      position: [1157, 300],
+      props: {
+        $style: {
+          width: '60px',
+          height: '60px',
+          borderRadius: '30px',
+          backgroundColor: '#0158ff0D',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }
+      },
+      children: [
+        {
+          id: 'province-img',
+          component: 'img',
+          props: {
+            $style: {
+              height: '24px'
+            },
+            src: '/yqfw/image/icon 01.svg'
+          }
+        }
+      ]
+    },
+    {
+      id: 'city-box',
+      component: 'div',
+      position: [1157, 434],
+      props: {
+        $style: {
+          width: '60px',
+          height: '60px',
+          borderRadius: '30px',
+          backgroundColor: '#EFC11E0D',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }
+      },
+      children: [
+        {
+          id: 'city-img',
+          component: 'img',
+          props: {
+            $style: {
+              height: '24px'
+            },
+            src: '/yqfw/image/icon 02.svg'
+          }
+        }
+      ]
+    },
+    {
+      id: 'other-box',
+      component: 'div',
+      position: [1157, 569],
+      props: {
+        $style: {
+          width: '60px',
+          height: '60px',
+          borderRadius: '30px',
+          backgroundColor: '#fd50800D',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }
+      },
+      children: [
+        {
+          id: 'other-img',
+          component: 'img',
+          props: {
+            $style: {
+              height: '24px'
+            },
+            src: '/yqfw/image/icon 03.svg'
+          }
+        }
+      ]
+    },
+
     // 六大指标标题
     {
       id: 'fixed-title',
@@ -609,7 +739,11 @@ module.exports = {
     workShop,
     workShopSpeed,
     donut,
+    cityDigital,
+    provinceDigital,
+    otherDigital,
     map,
     investmentTable,
+    newProjectClass
   ],
 };
