@@ -33,6 +33,9 @@
     </div>
     <div ref="new-title-line" :style="{width: '960px', height: '1px', backgroundColor: '#ECF1F3', position: 'absolute', top: '740px', left: '510px'}" />
     <div ref="new-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '900px', height: '384px', position: 'absolute', top: '676px', left: '510px'}" />
+    <div ref="province-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '272px', left: '1117px'}" />
+    <div ref="city-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '406px', left: '1117px'}" />
+    <div ref="other-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '541px', left: '1117px'}" />
     <div ref="banner" :style="{width: '1370px', height: '212px', position: 'absolute', top: '40px', left: '40px'}">
       <img ref="bannerImg" :style="{height: '100%'}" src="/yqfw/image/image_banner_bg.png" />
     </div>
@@ -54,13 +57,13 @@
     <div ref="work-box" :style="{width: '60px', height: '60px', borderRadius: '6px', backgroundColor: '#fd5080', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '590px', left: '1450px'}">
       <img ref="work-img" :style="{height: '24px'}" src="/yqfw/image/icon 08.svg" />
     </div>
-    <div ref="province-box" :style="{width: '60px', height: '60px', borderRadius: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '300px', left: '1157px'}">
+    <div ref="province-box" :style="{width: '60px', height: '60px', borderRadius: '30px', backgroundColor: '#0158ff0D', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '300px', left: '1157px'}">
       <img ref="province-img" :style="{height: '24px'}" src="/yqfw/image/icon 01.svg" />
     </div>
-    <div ref="city-box" :style="{width: '60px', height: '60px', borderRadius: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '434px', left: '1157px'}">
+    <div ref="city-box" :style="{width: '60px', height: '60px', borderRadius: '30px', backgroundColor: '#EFC11E0D', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '434px', left: '1157px'}">
       <img ref="city-img" :style="{height: '24px'}" src="/yqfw/image/icon 02.svg" />
     </div>
-    <div ref="other-box" :style="{width: '60px', height: '60px', borderRadius: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '569px', left: '1157px'}">
+    <div ref="other-box" :style="{width: '60px', height: '60px', borderRadius: '30px', backgroundColor: '#fd50800D', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '569px', left: '1157px'}">
       <img ref="other-img" :style="{height: '24px'}" src="/yqfw/image/icon 03.svg" />
     </div>
     <div ref="fixed-title" :style="{color: '#9DACBE', fontsize: '18px', fontWeight: '500', lineHeight: '1', position: 'absolute', top: '132px', left: '1538px'}">
@@ -138,6 +141,9 @@
           </span>
         </template>
       </vis-table>
+    </data-loader>
+    <data-loader ref="new-project" v-slot="{ results: results }" :url="`/v1/components/1314138c-beef-43b1-ae74-989d98c73f5e/data`" method="get" :data="[{label: '新建项目进度', amount: 12}]" :style="{width: '450px', height: '324px', position: 'absolute', top: '740px', left: '40px'}">
+      <donut ref="new-project-donut" v-if="results" :data="results.map((item, index) => ({label: craneStates.donutMap[item[0]], amount: item[1] }) )" labelKey="label" valueKey="amount" :percentage="true" :innerRadius="0.48" :theme="{background: 'transparent', colors: ['#EFC11E', '#FD5080', '#0158FF'], whitespace: 'nowrap'}" :legendOptions="{size: '70px', align: ['center', 'start'], layout: 'horizontal', label: {fill: '#2E2E2E', size: 14}, position: 'bottom'}" :tooltip="{text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, notation: {fill: '#007AFE', name: 'circle-small', size: 14}}" :tooltipOptions="{background: 'rgba(60, 71, 89, 0.9)', text: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}, title: {align: 'center', baseline: 'middle', fill: '#FFFFFF', size: 14, weight: 400}}" />
     </data-loader>
   </div>
 </template>

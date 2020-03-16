@@ -13,6 +13,7 @@ const donut = require('./project_class_donut');
 const cityDigital = require('./city_digital');
 const provinceDigital = require('./province_digital');
 const otherDigital = require('./other_digital');
+const newProjectClass = require('./new_project_donut');
 
 module.exports = {
   route: {
@@ -743,5 +744,6 @@ module.exports = {
     otherDigital,
     map,
     investmentTable,
+    newProjectClass
   ],
 };

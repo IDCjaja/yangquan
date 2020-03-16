@@ -22,7 +22,7 @@ module.exports = {
       component: '@byzanteam/graphite/donut',
       props: {
         'v-if': 'results',
-        $data: "results.map((item, index) => ({label: craneStates.donutMap[response.schema[index].field], amount: item }) )",
+        $data: "results.map((item, index) => ({label: craneStates.donutMap[item[0]], amount: item[1] }) )",
         labelKey: 'label',
         valueKey: 'amount',
         $percentage: true,
@@ -30,7 +30,7 @@ module.exports = {
         // $hideLabel: true,
         $theme: {
           background: 'transparent',
-          $colors: "['#EFC11E', '#0158FF']",
+          $colors: "['#EFC11E', '#FD5080', '#0158FF']",
           whitespace: 'nowrap'
         },
         $legendOptions: {
