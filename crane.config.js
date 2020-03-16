@@ -11,11 +11,14 @@ module.exports = {
   },
   modules: {
     '@byzanteam/vis-components': {
-      version: '../../vis-components',
+      version: '../vis-components',
       style: {
         type: 'normal',
         path: 'dist/index.css',
       },
+    },
+    '@byzanteam/map-ui': {
+      version: 'latest',
     },
     '@byzanteam/graphite': {
       version: 'latest',
@@ -33,6 +36,12 @@ module.exports = {
         type: 'injection',
         path: 'src/theme/default.scss'
       }
+    },
+    'vue-echarts': {
+      version: 'latest',
+    },
+    'echarts': {
+      version: 'latest',
     }
   },
   // 页面

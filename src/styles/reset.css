@@ -1,0 +1,70 @@
+.badge {
+  line-height: 1.2rem;
+  font-size: .7rem;
+  padding: 0 10px;
+}
+
+.badge.green {
+  background-color: rgba(1, 88, 255, .1);
+  color: rgb(1, 88, 255);
+}
+
+.badge.red {
+  background-color: rgba(253, 80, 128, .1);
+  color: rgb(253, 80, 128);
+}
+
+.badge.yellow {
+  background-color: rgba(239, 193, 30, .1);
+  color: rgb(239, 193, 30);
+}
+
+.table .table__head thead {
+  background: #f4f4f8 !important;
+}
+
+.table td, .table th {
+  padding: .8rem .4rem !important;
+  line-height: 1.5 !important;
+}
+
+.table.table--stripe .table__body tr:nth-child(odd) {
+  background-color: #ffffff !important;
+}
+
+.table.table--stripe .table__body tr:nth-child(even) {
+  background-color: rgba(244, 244, 248, .5) !important;
+}
+
+.table tr {
+  border-bottom-color: transparent !important;
+  color: #313c56 !important;
+}
+
+.personal-info-container {
+  background-color: #313c56;
+  padding: .3rem .4rem;
+  color: #ffffff;
+  font-size: .7rem;
+  border-radius: .2rem;
+  position: relative;
+}
+
+.personal-info-container::after {
+  content: "";
+  position: absolute;
+  border: .4rem solid transparent;
+  border-top-color: transparent;
+  bottom: -1.2rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info-name {
+  color: rgba(255, 255, 255, .4);
+  font-size: .7rem;
+}
+
+.amap-logo {
+  display: none !important;
+}
