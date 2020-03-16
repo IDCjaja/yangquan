@@ -21,7 +21,7 @@ module.exports = {
     path: 'vis',
   },
 
-  title: '考勤看板',
+  title: '阳泉重点项目管理平台',
 
   states: [
     {
