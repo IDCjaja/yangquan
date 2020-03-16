@@ -18,7 +18,7 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@byzanteam/brick@^0.4.11":
+"@byzanteam/brick@^0.4.11", "@byzanteam/brick@^0.4.7":
   version "0.4.16"
   resolved "https://registry.npm.taobao.org/@byzanteam/brick/download/@byzanteam/brick-0.4.16.tgz#3cb39af708f083c52e8e207e915e539b20c01348"
   integrity sha1-PLOa9wjwg8UujiB+kV5TmyDAE0g=
@@ -71,6 +71,22 @@
   version "0.1.6"
   dependencies:
     "@byzanteam/brick" "^0.4.11"
+    axios "^0.19.0"
+    core-js "^2.6.5"
+    countup.js "^2.0.4"
+    dayjs "^1.8.16"
+    lodash "^4.17.15"
+    vue "^2.6.10"
+    vue-axios "^2.1.4"
+    vue-countup-v2 "^4.0.0"
+    vue-router "^3.0.3"
+
+"@byzanteam/vis-components@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.npm.taobao.org/@byzanteam/vis-components/download/@byzanteam/vis-components-0.1.6.tgz#398b680a8154e945779292d9f3d0bc5336a44ffe"
+  integrity sha1-OYtoCoFU6UV3kpLZ89C8UzakT/4=
+  dependencies:
+    "@byzanteam/brick" "^0.4.7"
     axios "^0.19.0"
     core-js "^2.6.5"
     countup.js "^2.0.4"
@@ -7514,7 +7530,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue@^2.5.16, vue@^2.6.10:
+vue@^2.5.16, vue@^2.6.10, vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha1-dllNh31LEiNEBuhONSdcbVFBJcU=
