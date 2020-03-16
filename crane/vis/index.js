@@ -43,6 +43,7 @@ module.exports = {
   ],
 
   components: [
+    map,
     // 各个区域标题及外层border盒子
     {
       id: 'six-title-icon',
@@ -742,7 +743,6 @@ module.exports = {
     cityDigital,
     provinceDigital,
     otherDigital,
-    map,
     investmentTable,
     newProjectClass
   ],

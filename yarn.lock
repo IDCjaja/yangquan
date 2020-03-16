@@ -18,7 +18,7 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@byzanteam/brick@^0.4.11", "@byzanteam/brick@^0.4.7":
+"@byzanteam/brick@^0.4.11":
   version "0.4.16"
   resolved "https://registry.yarnpkg.com/@byzanteam/brick/-/brick-0.4.16.tgz#3cb39af708f083c52e8e207e915e539b20c01348"
   integrity sha512-5GJD0Y9lk7QCPPfFG1E7mojPlJca5RgE5rDTS6hZIlQ+Uzi4uAq1JLhIijutadRPV4SnV/m+HV7k7AphqF37Lg==
@@ -62,33 +62,15 @@
     vue-property-decorator "^8.1.0"
 
 "@byzanteam/map-ui@../map-ui":
-  version "0.1.5"
+  version "0.1.6"
   dependencies:
     lodash "^4.17.11"
     vue "^2.6.10"
 
-"@byzanteam/vis-components@latest":
+"@byzanteam/vis-components@../vis-components":
   version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@byzanteam/vis-components/-/vis-components-0.1.6.tgz#398b680a8154e945779292d9f3d0bc5336a44ffe"
-  integrity sha512-WkbAKAcn5jywq2bhhtE9+VDUfeE9fFgQ/xy7vxWKhXS10eHYrRfWS3A48xLQ6VOZesD/HML45t4jh3cDLK3Xcw==
   dependencies:
-    "@byzanteam/brick" "^0.4.7"
-    axios "^0.19.0"
-    core-js "^2.6.5"
-    countup.js "^2.0.4"
-    dayjs "^1.8.16"
-    lodash "^4.17.15"
-    vue "^2.6.10"
-    vue-axios "^2.1.4"
-    vue-countup-v2 "^4.0.0"
-    vue-router "^3.0.3"
-
-"@byzanteam/vis-components@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.npm.taobao.org/@byzanteam/vis-components/download/@byzanteam/vis-components-0.1.6.tgz#398b680a8154e945779292d9f3d0bc5336a44ffe"
-  integrity sha1-OYtoCoFU6UV3kpLZ89C8UzakT/4=
-  dependencies:
-    "@byzanteam/brick" "^0.4.7"
+    "@byzanteam/brick" "^0.4.11"
     axios "^0.19.0"
     core-js "^2.6.5"
     countup.js "^2.0.4"

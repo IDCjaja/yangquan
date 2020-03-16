@@ -1,5 +1,11 @@
 <template>
   <div class="vis">
+    <data-loader :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" url="/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data" method="get" :style="{width: '457px', height: '344px', position: 'absolute', top: '292px', left: '540px'}">
+      <base-map :mapOptions="{center: [113.383285, 38.061188], zoom: 8}" features="none" mapStyle="amap://styles/cca20692c7b4da0b930eadd919d5a3fb" :useMapUi="true" :zoomEnable="false" :resizeEnable="true" :style="{width: '100%', height: '100%', transform: `scale(${1/getMapScale()})`, position: 'absolute', top: '0px', left: '0px'}">
+        <regions @area-clicked="(json, area, vm)=>[areaClickedFunc(json, area, vm)]" @area-mouseover="(json, area, vm)=>[areaMouseoverFunc(json, area, vm)]" @area-mouseout="(json, area, vm)=>[areaMouseoutFunc(json, area, vm)]" :areas="areas" :areaStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .1}" :areaHoverStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .4}" />
+        <info-window ref="infowindowRef" :options="{closeWhenClickMap: true, isCustom: true}" />
+      </base-map>
+    </data-loader>
     <div ref="six-title-icon" :style="{height: '20px', width: '4px', borderRadius: '2px', backgroundColor: '#0158ff', position: 'absolute', top: '62px', left: '1450px'}" />
     <div ref="six-title-text" :style="{fontsize: '20px', color: '#6b7885', lineHeight: '1', fontWeight: '500', position: 'absolute', top: '64px', left: '1466px'}">
       六大指标
@@ -122,12 +128,6 @@
     </data-loader>
     <data-loader ref="other" v-slot="{ results: results }" :url="`/v1/components/c15377b9-682a-46d3-ae59-77d35ddbdb89/data`" method="get" :data="[['', 0]]" :style="{width: '194px', height: '44px', position: 'absolute', top: '566px', left: '1245px'}">
       <digital-roll ref="other-digital" v-if="results" titlePosition="bottom" :content="{title: '其他', digital: results[2][1]}" :options="{separator: ''}" :titleStyle="{color: '#9dacbe', fontSize: '14px', lineHeight: '1.5'}" :suffixStyle="{fontSize: '14px', color: '#9dacbe'}" :digitalStyle="{fontSize: '40px', color: '#313c56', fontFamily: 'Oswald', lineHeight: '1'}" />
-    </data-loader>
-    <data-loader :data="[['', 0, 0, 0, 0, 0, 0, 0, 0, 0]]" url="/v1/components/ca576fb4-f69b-41a8-b45f-f34d5ad24854/data" method="get" :style="{width: '457px', height: '344px', position: 'absolute', top: '292px', left: '540px'}">
-      <base-map :mapOptions="{center: [113.383285, 38.061188], zoom: 8}" features="none" mapStyle="amap://styles/cca20692c7b4da0b930eadd919d5a3fb" :useMapUi="true" :zoomEnable="false" :resizeEnable="true" :style="{width: '100%', height: '100%', transform: `scale(${1/getMapScale()})`, position: 'absolute', top: '0px', left: '0px'}">
-        <regions @area-clicked="(json, area, vm)=>[areaClickedFunc(json, area, vm)]" @area-mouseover="(json, area, vm)=>[areaMouseoverFunc(json, area, vm)]" @area-mouseout="(json, area, vm)=>[areaMouseoutFunc(json, area, vm)]" :areas="areas" :areaStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .1}" :areaHoverStyle="{strokeColor: '#0158ff', strokeWeight: '1', fillColor: 'rgb(1, 88, 255)', fillOpacity: .4}" />
-        <info-window ref="infowindowRef" :options="{closeWhenClickMap: true, isCustom: true}" />
-      </base-map>
     </data-loader>
     <data-loader ref="investment" v-slot="{ results: results }" url="/v1/components/52ef7f5e-8046-4297-9671-cee40e05460c/data" method="get" :data="[[0]]" :style="{width: '860px', height: '280px', position: 'absolute', top: '760px', left: '530px'}">
       <vis-table ref="investment-table" v-if="results" stripe="row" :headers="[{key: 'name', title: '项目名称'}, {key: 'finished', title: '已完成投资额'}, {key: 'total', title: '项目总投资'}, {key: 'percetage', title: '已投资比率'}, {key: 'status', title: '预警标识'}]" :data="results.map(item => ({name: item[0], finished: `${item[1]} 亿元`, total: `${item[2]} 亿元`, percetage: `${item[3]}%`, status: item[4]}))">

@@ -1,5 +1,6 @@
 module.exports = {
-  publicPath: '/',
+  publicPath: '/yqfw/',
+  outputDir: 'yangquan',
   pluginOptions: {
     i18n: {
       locale: 'yes',
