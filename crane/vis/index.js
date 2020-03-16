@@ -303,10 +303,10 @@ module.exports = {
     {
       id: 'new-title-line',
       component: 'div',
-      position: [510, 740],
+      position: [530, 740],
       props: {
         $style: {
-          width: '960px',
+          width: '860px',
           height: '1px',
           backgroundColor: '#ECF1F3'
         }

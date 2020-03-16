@@ -31,7 +31,7 @@
     <div ref="new-title-text" :style="{fontsize: '20px', color: '#6b7885', lineHeight: '1', fontWeight: '500', position: 'absolute', top: '698px', left: '546px'}">
       投资预计分析
     </div>
-    <div ref="new-title-line" :style="{width: '960px', height: '1px', backgroundColor: '#ECF1F3', position: 'absolute', top: '740px', left: '510px'}" />
+    <div ref="new-title-line" :style="{width: '860px', height: '1px', backgroundColor: '#ECF1F3', position: 'absolute', top: '740px', left: '530px'}" />
     <div ref="new-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '900px', height: '384px', position: 'absolute', top: '676px', left: '510px'}" />
     <div ref="province-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '272px', left: '1117px'}" />
     <div ref="city-border-box" :style="{border: '1px solid #ecf1f3', borderRadius: '8px', width: '294px', height: '114px', position: 'absolute', top: '406px', left: '1117px'}" />
