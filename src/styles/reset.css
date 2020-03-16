@@ -79,6 +79,23 @@
 th:first-child {
   width: 33.33%;
 }
+
 td:first-child {
   width: 33.33%;
+}
+
+@font-face {
+  font-family: 'Oswald-Regular';
+  src:
+      url('/yqfw/fonts/Oswald-Regular.woff') format('woff'),
+      url('/yqfw/fonts/Oswald-Regular.woff2') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Oswald-Light';
+  src:
+      url('/yqfw/fonts/Oswald-Light.woff') format('woff'),
+      url('/yqfw/fonts/Oswald-Light.woff2') format('woff');
+  font-weight: normal;
 }
